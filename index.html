@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSMIX — By JuninN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+
+  <!-- =======================================================
+       HEADER
+       ======================================================== -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <h1>CSMIX</h1>
+        <span>By JuninN</span>
+      </div>
+
+      <button class="profile-btn" id="profileButton">
+        PROFILE
+      </button>
+    </div>
+  </header>
+
+  <!-- =======================================================
+       MAIN
+       ======================================================== -->
+  <main>
+
+  <!-- HOME SCREEN -->
+  <section class="home-screen" id="homeScreen">
+    <div class="hero">
+      <h2 class="hero-title">CSMIX</h2>
+      <p class="hero-subtitle">By JuninN</p>
+    </div>
+
+    <div class="mode-buttons">
+      <button class="mode-btn" id="onlineButton" data-mode="online">
+        ONLINE
+      </button>
+
+      <button class="mode-btn" id="lanButton" data-mode="presencial">
+        LAN
+      </button>
+    </div>
+  </section>
+
+  <!-- MIXES SCREEN -->
+  <section class="mixes-screen" id="mixesScreen">
+    <div class="mixes-top">
+      <div class="mixes-heading">
+        <h2 id="mixesTitle">ONLINE</h2>
+        <span id="mixesSubtitle">10 mixes</span>
+      </div>
+
+      <button class="back-home" id="backHomeButton">
+        VOLTAR
+      </button>
+    </div>
+
+    <div class="cards-grid" id="cardsGrid"></div>
+  </section>
+
+  </main>
+  </div>
+
+  <!-- =========================================================
+       PROFILE MODAL
+       ========================================================== -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>PROFILE</h2>
+        <button class="close-modal" id="closeProfileButton" aria-label="Fechar">×</button>
+      </div>
+
+      <!-- INITIAL PROFILE VIEW -->
+      <div class="auth-view active" id="profileHomeView">
+        <p class="profile-intro">
+          Entre na sua conta ou crie uma conta para participar dos mixes.
+        </p>
+        <div class="auth-options">
+          <button class="primary-btn" id="showLoginButton">
+            ENTRAR
+          </button>
+          <button class="secondary-btn" id="showRegisterButton">
+            CRIAR CONTA
+          </button>
+        </div>
+      </div>
+
+      <!-- LOGIN VIEW -->
+      <div class="auth-view" id="loginView">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">EMAIL</label>
+            <input id="loginEmail" type="email" autocomplete="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">SENHA</label>
+            <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+          </div>
+          <div class="form-actions">
+            <button class="primary-btn" type="submit">ENTRAR</button>
+            <button class="secondary-btn" type="button" id="backFromLoginButton">VOLTAR</button>
+          </div>
+          <div class="form-message" id="loginMessage"></div>
+        </form>
+      </div>
+
+      <!-- REGISTER VIEW -->
+      <div class="auth-view" id="registerView">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerEmail">EMAIL</label>
+            <input id="registerEmail" type="email" autocomplete="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">SENHA</label>
+            <input id="registerPassword" type="password" autocomplete="new-password" placeholder="Sua senha" minlength="6" required>
+          </div>
+          <div class="form-actions">
+            <button class="primary-btn" type="submit">CRIAR</button>
+            <button class="secondary-btn" type="button" id="backFromRegisterButton">VOLTAR</button>
+          </div>
+          <div class="form-message" id="registerMessage"></div>
+        </form>
+      </div>
+
+      <!-- LOGGED PROFILE VIEW -->
+      <div class="logged-profile" id="loggedProfileView">
+        <div class="profile-email">
+          <strong>CONTA</strong>
+          <span id="loggedEmail">—</span>
+        </div>
+        <div class="form-group">
+          <label for="nickInput">SEU NICK</label>
+          <input id="nickInput" type="text" maxlength="24" placeholder="Digite seu nick">
+        </div>
+        <button class="primary-btn" id="saveNickButton">SALVAR NICK</button>
+        <div class="form-message" id="nickMessage"></div>
+        <div class="profile-actions">
+          <button class="danger-btn" id="logoutButton">SAIR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- =========================================================
+       MODULES
+       ========================================================== -->
+  <script type="module" src="js/identity.js"></script>
+  <script type="module" src="js/day-rollover.js"></script>
+  <script type="module" src="js/header-admin.js"></script>
+  <script type="module" src="js/ui-home.js"></script>
+</body>
+</html>
